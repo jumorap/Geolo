@@ -1,0 +1,4 @@
+El archivo donde se llama a los drivers de la camara (en caso posterior es 
+flycapture) "camera_driver.hpp" el puntero inteligente unique_pt<camera> es de
+tipo camera de la libreria de flycapture llamada camera.h de la clase 
+FLYCAPTURE_API.

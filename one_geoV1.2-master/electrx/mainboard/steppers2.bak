@@ -1,0 +1,520 @@
+EESchema Schematic File Version 2
+LIBS:mainboard-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:RMC
+LIBS:arduino_shieldsNCL
+LIBS:opendous
+LIBS:m-bed
+LIBS:stepper_drivers
+LIBS:dc-dc-dsun
+LIBS:74xgxx
+LIBS:ac-dc
+LIBS:actel
+LIBS:allegro
+LIBS:Altera
+LIBS:analog_devices
+LIBS:battery_management
+LIBS:bbd
+LIBS:bosch
+LIBS:brooktre
+LIBS:cmos_ieee
+LIBS:dc-dc
+LIBS:diode
+LIBS:elec-unifil
+LIBS:ESD_Protection
+LIBS:ftdi
+LIBS:gennum
+LIBS:graphic
+LIBS:hc11
+LIBS:intersil
+LIBS:ir
+LIBS:Lattice
+LIBS:leds
+LIBS:LEM
+LIBS:logo
+LIBS:maxim
+LIBS:mechanical
+LIBS:microchip_dspic33dsc
+LIBS:microchip_pic10mcu
+LIBS:microchip_pic12mcu
+LIBS:microchip_pic16mcu
+LIBS:microchip_pic18mcu
+LIBS:microchip_pic24mcu
+LIBS:microchip_pic32mcu
+LIBS:modules
+LIBS:motor_drivers
+LIBS:motors
+LIBS:msp430
+LIBS:nordicsemi
+LIBS:nxp
+LIBS:nxp_armmcu
+LIBS:onsemi
+LIBS:Oscillators
+LIBS:powerint
+LIBS:Power_Management
+LIBS:pspice
+LIBS:references
+LIBS:relays
+LIBS:rfcom
+LIBS:RFSolutions
+LIBS:sensors
+LIBS:silabs
+LIBS:stm8
+LIBS:stm32
+LIBS:supertex
+LIBS:switches
+LIBS:transf
+LIBS:triac_thyristor
+LIBS:ttl_ieee
+LIBS:video
+LIBS:wiznet
+LIBS:Worldsemi
+LIBS:Xicor
+LIBS:zetex
+LIBS:Zilog
+LIBS:Symbols_DCDC-ACDC-Converter_RevC_20Jul2012
+LIBS:Symbols_EN60617_13Mar2013
+LIBS:Symbols_EN60617-10_HF-Radio_DRAFT_12Sep2013
+LIBS:Symbols_ICs-Diskrete_RevD10
+LIBS:Symbols_ICs-Opto_RevB_16Sep2013
+LIBS:Symbols_Microcontroller_Philips-NXP_RevA_06Oct2013
+LIBS:SymbolsSimilarEN60617+oldDIN617-RevE8
+LIBS:Symbols_Socket-DIN41612_RevA
+LIBS:Symbols_Transformer-Diskrete_RevA
+LIBS:gmas
+LIBS:4000-ic
+LIBS:7400-ic
+LIBS:analog-ic
+LIBS:avr-mcu
+LIBS:bluegiga
+LIBS:connector
+LIBS:diode-inc-ic
+LIBS:freescale-ic
+LIBS:ftdi-ic
+LIBS:led
+LIBS:maxim-ic
+LIBS:micrel-ic
+LIBS:microchip-ic
+LIBS:nxp-ic
+LIBS:on-semi-ic
+LIBS:regulator
+LIBS:rohm
+LIBS:sharp-relay
+LIBS:sparkfun
+LIBS:standard
+LIBS:stmicro-mcu
+LIBS:ti-ic
+LIBS:transistor
+LIBS:uln-ic
+LIBS:mainboard-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 5 8
+Title "OneGeo Controller Shield"
+Date "2017-05-11"
+Rev "v1"
+Comp "Gmas+"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text GLabel 3450 3850 0    50   Input ~ 0
+/E1_EN_BUF
+Wire Wire Line
+	3300 1450 4100 1450
+Connection ~ 3550 4250
+Connection ~ 3650 1850
+Connection ~ 5600 5100
+Wire Wire Line
+	5600 4650 5600 5250
+Wire Wire Line
+	3550 5050 3550 5100
+Wire Wire Line
+	3550 5100 5600 5100
+Wire Wire Line
+	3550 4550 3550 4250
+Connection ~ 5700 2700
+Wire Wire Line
+	5700 2250 5700 2800
+Connection ~ 5650 1350
+Connection ~ 5550 3750
+Wire Wire Line
+	3700 4650 4000 4650
+Connection ~ 2550 4350
+Wire Wire Line
+	2550 3150 2550 4450
+Wire Wire Line
+	2550 4450 4000 4450
+Wire Wire Line
+	2550 4350 4000 4350
+Wire Wire Line
+	4000 4150 3950 4150
+Wire Wire Line
+	2550 4250 4000 4250
+Wire Wire Line
+	3450 3850 4000 3850
+Wire Wire Line
+	2550 3150 3900 3150
+Wire Wire Line
+	3650 3150 3650 3100
+Connection ~ 3650 3150
+Wire Wire Line
+	3950 4050 4000 4050
+Connection ~ 2550 4250
+Wire Wire Line
+	4000 4750 3900 4750
+Wire Wire Line
+	3900 4750 3900 4650
+Connection ~ 3900 4650
+Wire Wire Line
+	4000 3750 3900 3750
+Wire Wire Line
+	3900 3750 3900 3150
+Wire Wire Line
+	2550 750  4000 750 
+Wire Wire Line
+	4000 750  4000 1350
+Wire Wire Line
+	4000 1350 4100 1350
+Connection ~ 4000 2250
+Wire Wire Line
+	4000 2250 4000 2350
+Wire Wire Line
+	4000 2350 4100 2350
+Connection ~ 2550 1850
+Wire Wire Line
+	2550 1850 4100 1850
+Wire Wire Line
+	4050 1650 4100 1650
+Wire Wire Line
+	2550 1950 4100 1950
+Connection ~ 3750 750 
+Wire Wire Line
+	3750 750  3750 750 
+Wire Wire Line
+	3750 750  3750 700 
+Wire Wire Line
+	5650 1150 5650 1350
+Wire Wire Line
+	5400 1350 6300 1350
+Wire Wire Line
+	5700 1850 5400 1850
+Wire Wire Line
+	5700 1650 5400 1650
+Wire Wire Line
+	5400 2350 6300 2350
+Wire Wire Line
+	5700 2250 5400 2250
+Wire Wire Line
+	5400 1750 5700 1750
+Wire Wire Line
+	5400 1950 5700 1950
+Wire Wire Line
+	2550 2050 4100 2050
+Wire Wire Line
+	4100 1750 4050 1750
+Wire Wire Line
+	2550 750  2550 2050
+Connection ~ 2550 1950
+Wire Wire Line
+	3800 2250 4100 2250
+Wire Wire Line
+	5300 4350 5600 4350
+Wire Wire Line
+	5300 4150 5600 4150
+Wire Wire Line
+	5600 4650 5300 4650
+Wire Wire Line
+	5300 4750 6200 4750
+Wire Wire Line
+	5600 4050 5300 4050
+Wire Wire Line
+	5600 4250 5300 4250
+Wire Wire Line
+	5300 3750 6200 3750
+Wire Wire Line
+	5550 3550 5550 3750
+Wire Wire Line
+	6300 1350 6300 1600
+Wire Wire Line
+	6300 2350 6300 2000
+Wire Wire Line
+	6200 4750 6200 4400
+Wire Wire Line
+	6200 3750 6200 4000
+Wire Wire Line
+	3650 2150 3650 1850
+Wire Wire Line
+	5700 2700 3650 2700
+Wire Wire Line
+	3650 2700 3650 2650
+Text GLabel 3300 1450 0    50   Input ~ 0
+/E0_EN_BUF
+Text GLabel 3950 4050 0    50   Input ~ 0
+E1_STEP
+Text GLabel 3950 4150 0    50   Input ~ 0
+E1_DIR
+$Comp
+L GND-RESCUE-mainboard #PWR058
+U 1 1 51B4E8DF
+P 5600 5250
+AR Path="/58DC0AE7/51B4E8DF" Ref="#PWR058"  Part="1" 
+AR Path="/51B4E84F/51B4E8DF" Ref="#PWR042"  Part="1" 
+F 0 "#PWR042" H 5600 5250 30  0001 C CNN
+F 1 "GND" H 5600 5180 30  0001 C CNN
+F 2 "" H 5600 5250 60  0001 C CNN
+F 3 "" H 5600 5250 60  0001 C CNN
+	1    5600 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_4 P212
+U 1 1 51B4E8DE
+P 5950 4200
+AR Path="/58DC0AE7/51B4E8DE" Ref="P212"  Part="1" 
+AR Path="/51B4E84F/51B4E8DE" Ref="P212"  Part="1" 
+F 0 "P212" V 5900 4200 50  0000 C CNN
+F 1 "AN-MOT" V 6000 4200 50  0000 C CNN
+F 2 "RMC:CONN_KK_2.54_4W" H 5950 4200 60  0001 C CNN
+F 3 "" H 5950 4200 60  0001 C CNN
+	1    5950 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_4 P217
+U 1 1 51B4E8DD
+P 6050 1800
+AR Path="/58DC0AE7/51B4E8DD" Ref="P217"  Part="1" 
+AR Path="/51B4E84F/51B4E8DD" Ref="P217"  Part="1" 
+F 0 "P217" V 6000 1800 50  0000 C CNN
+F 1 "POL-MOT" V 6100 1800 50  0000 C CNN
+F 2 "RMC:CONN_KK_2.54_4W" H 6050 1800 60  0001 C CNN
+F 3 "" H 6050 1800 60  0001 C CNN
+	1    6050 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND-RESCUE-mainboard #PWR059
+U 1 1 51B4E8DC
+P 5700 2800
+AR Path="/58DC0AE7/51B4E8DC" Ref="#PWR059"  Part="1" 
+AR Path="/51B4E84F/51B4E8DC" Ref="#PWR043"  Part="1" 
+F 0 "#PWR043" H 5700 2800 30  0001 C CNN
+F 1 "GND" H 5700 2730 30  0001 C CNN
+F 2 "" H 5700 2800 60  0001 C CNN
+F 3 "" H 5700 2800 60  0001 C CNN
+	1    5700 2800
+	1    0    0    -1  
+$EndComp
+Text GLabel 4050 1750 0    50   Input ~ 0
+E0_DIR
+Text GLabel 4050 1650 0    50   Input ~ 0
+E0_STEP
+$Comp
+L POLOLU U205
+U 1 1 51B4E8D9
+P 4650 4250
+AR Path="/58DC0AE7/51B4E8D9" Ref="U205"  Part="1" 
+AR Path="/51B4E84F/51B4E8D9" Ref="U205"  Part="1" 
+F 0 "U205" H 4350 4850 60  0000 C CNN
+F 1 "Analyzer" H 4450 3600 60  0000 C CNN
+F 2 "RMC:POLOLU" H 4650 4250 60  0001 C CNN
+F 3 "" H 4650 4250 60  0001 C CNN
+	1    4650 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L POLOLU U206
+U 1 1 51B4E8D8
+P 4750 1850
+AR Path="/58DC0AE7/51B4E8D8" Ref="U206"  Part="1" 
+AR Path="/51B4E84F/51B4E8D8" Ref="U206"  Part="1" 
+F 0 "U206" H 4450 2450 60  0000 C CNN
+F 1 "Polarizer" H 4550 1200 60  0000 C CNN
+F 2 "RMC:POLOLU" H 4750 1850 60  0001 C CNN
+F 3 "" H 4750 1850 60  0001 C CNN
+	1    4750 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP1-RESCUE-mainboard C206
+U 1 1 51B4E8D7
+P 6300 1800
+AR Path="/58DC0AE7/51B4E8D7" Ref="C206"  Part="1" 
+AR Path="/51B4E84F/51B4E8D7" Ref="C206"  Part="1" 
+F 0 "C206" H 6350 1900 50  0000 L CNN
+F 1 "100u 35V" H 6350 1700 50  0000 L CNN
+F 2 "w_smd_cap:c_elec_6.3x7.7" H 6300 1800 60  0001 C CNN
+F 3 "" H 6300 1800 60  0001 C CNN
+	1    6300 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP1-RESCUE-mainboard C205
+U 1 1 51B4E8D6
+P 6200 4200
+AR Path="/58DC0AE7/51B4E8D6" Ref="C205"  Part="1" 
+AR Path="/51B4E84F/51B4E8D6" Ref="C205"  Part="1" 
+F 0 "C205" H 6250 4300 50  0000 L CNN
+F 1 "100u 35V" H 6250 4100 50  0000 L CNN
+F 2 "w_smd_cap:c_elec_6.3x7.7" H 6200 4200 60  0001 C CNN
+F 3 "" H 6200 4200 60  0001 C CNN
+	1    6200 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L R-RESCUE-mainboard R210
+U 1 1 51B4E8D5
+P 3650 2400
+AR Path="/58DC0AE7/51B4E8D5" Ref="R210"  Part="1" 
+AR Path="/51B4E84F/51B4E8D5" Ref="R210"  Part="1" 
+F 0 "R210" V 3730 2400 50  0000 C CNN
+F 1 "100k" V 3650 2400 50  0000 C CNN
+F 2 "opendous:SM0805_Opendous" H 3650 2400 60  0001 C CNN
+F 3 "" H 3650 2400 60  0001 C CNN
+	1    3650 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L R-RESCUE-mainboard R208
+U 1 1 51B4E8D4
+P 3550 4800
+AR Path="/58DC0AE7/51B4E8D4" Ref="R208"  Part="1" 
+AR Path="/51B4E84F/51B4E8D4" Ref="R208"  Part="1" 
+F 0 "R208" V 3630 4800 50  0000 C CNN
+F 1 "100k" V 3550 4800 50  0000 C CNN
+F 2 "opendous:SM0805_Opendous" H 3550 4800 60  0001 C CNN
+F 3 "" H 3550 4800 60  0001 C CNN
+	1    3550 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L +V_MOTOR #PWR062
+U 1 1 51B4E8CB
+P 5550 3550
+AR Path="/58DC0AE7/51B4E8CB" Ref="#PWR062"  Part="1" 
+AR Path="/51B4E84F/51B4E8CB" Ref="#PWR044"  Part="1" 
+F 0 "#PWR044" H 5550 3520 30  0001 C CNN
+F 1 "+V_MOTOR" H 5550 3650 30  0000 C CNN
+F 2 "" H 5550 3550 60  0001 C CNN
+F 3 "" H 5550 3550 60  0001 C CNN
+	1    5550 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L +V_MOTOR #PWR063
+U 1 1 51B4E8CA
+P 5650 1150
+AR Path="/58DC0AE7/51B4E8CA" Ref="#PWR063"  Part="1" 
+AR Path="/51B4E84F/51B4E8CA" Ref="#PWR045"  Part="1" 
+F 0 "#PWR045" H 5650 1120 30  0001 C CNN
+F 1 "+V_MOTOR" H 5650 1250 30  0000 C CNN
+F 2 "" H 5650 1150 60  0001 C CNN
+F 3 "" H 5650 1150 60  0001 C CNN
+	1    5650 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L +V_LOGIC #PWR065
+U 1 1 51B4E8C8
+P 3650 3100
+AR Path="/58DC0AE7/51B4E8C8" Ref="#PWR065"  Part="1" 
+AR Path="/51B4E84F/51B4E8C8" Ref="#PWR046"  Part="1" 
+F 0 "#PWR046" H 3650 3070 30  0001 C CNN
+F 1 "+V_LOGIC" H 3650 3200 30  0000 C CNN
+F 2 "" H 3650 3100 60  0001 C CNN
+F 3 "" H 3650 3100 60  0001 C CNN
+	1    3650 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L +V_LOGIC #PWR066
+U 1 1 51B4E8C7
+P 3750 700
+AR Path="/58DC0AE7/51B4E8C7" Ref="#PWR066"  Part="1" 
+AR Path="/51B4E84F/51B4E8C7" Ref="#PWR047"  Part="1" 
+F 0 "#PWR047" H 3750 670 30  0001 C CNN
+F 1 "+V_LOGIC" H 3750 800 30  0000 C CNN
+F 2 "" H 3750 700 60  0001 C CNN
+F 3 "" H 3750 700 60  0001 C CNN
+	1    3750 700 
+	1    0    0    -1  
+$EndComp
+$Comp
+L +V_LOGIC #PWR067
+U 1 1 51B4E8C6
+P 3800 2250
+AR Path="/58DC0AE7/51B4E8C6" Ref="#PWR067"  Part="1" 
+AR Path="/51B4E84F/51B4E8C6" Ref="#PWR048"  Part="1" 
+F 0 "#PWR048" H 3800 2220 30  0001 C CNN
+F 1 "+V_LOGIC" H 3800 2350 30  0000 C CNN
+F 2 "" H 3800 2250 60  0001 C CNN
+F 3 "" H 3800 2250 60  0001 C CNN
+	1    3800 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L +V_LOGIC #PWR069
+U 1 1 51B4E8C4
+P 3700 4650
+AR Path="/58DC0AE7/51B4E8C4" Ref="#PWR069"  Part="1" 
+AR Path="/51B4E84F/51B4E8C4" Ref="#PWR049"  Part="1" 
+F 0 "#PWR049" H 3700 4620 30  0001 C CNN
+F 1 "+V_LOGIC" H 3700 4750 30  0000 C CNN
+F 2 "" H 3700 4650 60  0001 C CNN
+F 3 "" H 3700 4650 60  0001 C CNN
+	1    3700 4650
+	1    0    0    -1  
+$EndComp
+Text GLabel 6100 4750 2    50   UnSpc ~ 0
+MOT_GND
+Text GLabel 6200 2350 2    50   UnSpc ~ 0
+MOT_GND
+Text Label 5350 4050 0    40   ~ 0
+E1-2B
+Text Label 5350 4150 0    40   ~ 0
+E1-2A
+Text Label 5350 4250 0    40   ~ 0
+E1-1A
+Text Label 5350 4350 0    40   ~ 0
+E1-1B
+Text Label 5450 1650 0    40   ~ 0
+E0-2B
+Text Label 5450 1750 0    40   ~ 0
+E0-2A
+Text Label 5450 1850 0    40   ~ 0
+E0-1A
+Text Label 5450 1950 0    40   ~ 0
+E0-1B
+$EndSCHEMATC

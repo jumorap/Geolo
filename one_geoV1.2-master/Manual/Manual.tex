@@ -1,0 +1,504 @@
+
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[symmetric=false] {tufte-book}% Use the tufte-book class which in turn uses the tufte-common class
+
+\hypersetup{colorlinks=[rgb]{0 0.455 0.694} ,  urlcolor =[rgb]{0 0.455 0.694}} % Comment this line if you don't wish to have colored links
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{microtype} % Improves character and word spacing
+
+\usepackage{lipsum} % Inserts dummy text
+
+\usepackage{booktabs} % Better horizontal rules in tables
+
+\usepackage{graphicx} % Needed to insert images into the document
+\graphicspath{{graphics/}} % Sets the default location of pictures
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio} % Improves figure scaling
+
+\usepackage{fancyvrb} % Allows customization of verbatim environments
+\fvset{fontsize=\normalsize} % The font size of all verbatim text can be changed here
+
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}} % New command to create parentheses around text in tables which take up no horizontal space - this improves column spacing
+\newcommand{\hangstar}{\makebox[0pt][l]{*}} % New command to create asterisks in tables which take up no horizontal space - this improves column spacing
+
+\usepackage{xspace} % Used for printing a trailing space better than using a tilde (~) using the \xspace command
+
+
+\newcommand{\monthyear}{\ifcase\month\or Enero\or Febrero\or Marzo\or Abril\or Mayo\or Junio\or Julio\or Augosto\or Septiembre\or Octubre\or Noviembre\or Diciembre\fi\space\number\year} % A command to print the current month and year
+
+\newcommand{\openepigraph}[2]{ % This block sets up a command for printing an epigraph with 2 arguments - the quote and the author
+\begin{fullwidth}
+\sffamily\large
+\begin{doublespace}
+\noindent\allcaps{#1}\\ % The quote
+\noindent\allcaps{#2} % The author
+\end{doublespace}
+\end{fullwidth}
+}
+
+\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage} % Command to insert a blank page
+
+\usepackage{makeidx} % Used to generate the index
+\makeindex % Generate the index which is printed at the end of the document
+
+
+\usepackage{anyfontsize}
+\usepackage[T1]{fontenc}
+\usepackage[math]{iwona}
+%\usepackage[none]{hyphenat}
+
+\usepackage{titlesec}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+\makeatletter
+%\renewcommand\section{\@startsection {section}{1}{\z@}%
+%	{-3.5ex \@plus -1ex \@minus -.2ex}%
+%	{2.3ex \@plus.2ex}%
+%	{\Large\textbf}}
+%\renewcommand\chapter{\newpage \@startsection {chapter}{1}{\z@}%
+%	{-3.5ex \@plus -1ex \@minus -.2ex}%
+%	{2.3ex \@plus.2ex}%
+%	{\Huge\textbf}}
+
+	
+	
+\renewcommand*\rmdefault{iwona}
+
+
+\newcommand{\GM}{{Gmas}\xspace}
+\newcommand{\OG}{{OneGeo}\xspace}
+\newcommand{\SDs}{{secciones delgadas}\xspace}
+\newcommand{\SD}{sección delgada\xspace}
+\newcommand{\tmux}{\color{black}tmux}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{color}
+\usepackage{colortbl}
+
+\definecolor{gmblue}{rgb}{0,0.678,0.937}
+\definecolor{ogblue}{rgb}{0,0.455,0.694}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\color{white},
+	showstringspaces=false,
+	commentstyle=\color{darkgray},
+	keywordstyle=\color{black},
+	backgroundcolor=\color{gmblue},
+}
+
+\usepackage{float}
+
+%----------------------------------------------------------------------------------------
+%	BOOK META-INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{ \nohyphenation Manual de Operación de Microscopio de \OG} % Title of the book
+
+\author[Ing. Fredy Osorio]{Ing. Fredy Osorio\textbackslash \GM} % Author
+\publisher{\GM} % Publisher
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\frontmatter
+
+%----------------------------------------------------------------------------------------
+%	EPIGRAPH
+%----------------------------------------------------------------------------------------
+%
+%\thispagestyle{empty}
+%\openepigraph{Quotation 1}{Author, {\itshape Source}}
+%\vfill
+%\openepigraph{Quotation 2}{Author}
+%\vfill
+%\openepigraph{Quotation 3}{Author}
+
+%----------------------------------------------------------------------------------------
+
+\maketitle % Print the title page
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+\begin{fullwidth}
+	~\vfill
+	\thispagestyle{empty}
+	\setlength{\parindent}{0pt}
+	\setlength{\parskip}{\baselineskip}
+	Copyright \copyright\ \the\year\ \thanklessauthor
+	
+	\par\smallcaps{Published by \thanklesspublisher}
+	
+	%\par\smallcaps{tufte-latex.googlecode.com}
+	
+	%\par Licensed under the Apache License, Version 2.0 (the ``License''); you may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://www.apache.org/licenses/LICENSE-2.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \smallcaps{``AS IS'' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\index{license}
+	
+	\par\textit{Primera impresión, \monthyear}
+\end{fullwidth}
+\pagebreak
+
+
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Print the table of contents
+
+%----------------------------------------------------------------------------------------
+
+%\listoffigures % Print a list of figures
+%
+%%----------------------------------------------------------------------------------------
+%
+%\listoftables % Print a list of tables
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION PAGE
+%----------------------------------------------------------------------------------------
+
+%\cleardoublepage
+%~\vfill
+%\begin{doublespace}
+%\noindent\fontsize{18}{22}\selectfont\itshape
+%\nohyphenation
+%Dedicated to my family and friends.
+%\end{doublespace}
+%\vfill
+%\vfill
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+%\cleardoublepage
+\mainmatter
+\chapter{Introducción}
+\label{ch:intro}
+
+La plataforma de gestión y análisis de secciones delgadas \OG permite almacenar en internet imágenes de alta resolución (>200 Mpx) que le facilitan al analista una revisión detallada de varias características de la muestra.
+
+El visor de imágenes de OneGeo posibilita la navegación a lo largo y ancho de la sección, a distintos niveles de magnificación. Además su  sistema de barrido angular de polarización, muestra cómo interactúa la luz sobre la \SD bajo distintas orientaciones de los polarizadores. Este barrido incluye 10 ángulos de polarización para XPL y PPl, desde 0$^\circ$ hasta 45$^\circ$, con pasos de 5$^\circ$.
+
+La misión de \textbf{\GM} es el de brindarle al cliente una experiencia de la mayor satisfacción posible en los servicios ofrecidos, para esto los procedimientos relacionados con tecnología deben hacerse de una manera práctica, estructurada y estandarizada.
+
+\begin{marginfigure}
+	\includegraphics[width=\linewidth,keepaspectratio=true]{LOGOONEGEOblue.pdf}
+\end{marginfigure}
+
+Este documento tiene como propósito proporcionar una guía detallada para llevar a cabo la operación cotidiana del microscopio de \textbf{\OG} de \GM.
+Además presenta las instrucciones para que de una manera rápida y eficiente se desempeñen las tareas de toma y procesamiento de \SDs, brindando imágenes de calidad para apoyar las tareas en el laboratorio de geología y petrofísica de la compañía.
+
+
+\section{Objetivo del Manual de Operación}
+
+El Objetivo del presente manual es el de proveer una guía y procedimientos de operación del microscopio de \OG que permita la efectiva y ágil toma y procesamiento de muestras de \SDs.
+
+\section{Alcance del Manual}
+
+El alcance de presente documento abarca las actividades a realizar desde la recepción de la \SD hasta el procedimiento de procesamiento de imágenes (\textit{stitching}) e ingreso del resultado a la plataforma web de \OG.
+
+%------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+%----------------------------------------------------------------------------------------
+
+\chapter{Preparación del Microscopio}
+\label{ch:PrepMicro}
+
+\section{Software}
+
+Para comenzar debe estar encendido el computador de procesamiento en la oficina de EOST 312,  ya que este será el que reciba y almacene las imágenes tomadas por el microscopio \OG, así como una conexión a internet en ambos computadores. 
+
+Seguidamente se debe encender el computador que controla el microscopio. Se abrirá una ventana de \textit{Log in} en la cual estará disponible el usuario $"$\textit{\textbf{ops}}$"$ y cuya clave es $"$\textit{\textbf{operador}}$"$.
+
+
+En el escritorio debe haber un icono de un script ejecutable llamado \textit{\textbf{Launch Capture}}.
+
+
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=3cm, height=2.5cm,keepaspectratio=true]{launch.png}
+		\caption{Icono de Launch Capture en el desktop}
+		
+	\end{figure}
+
+
+
+\textit{\textbf{Launch Capture }}abrirá 4 procesos que correrán simultáneamente en un shell de \textit{tmux}, todos necesarios para el funcionamiento y adquisición de datos desde el microscopio.  Estos procesos se pueden ser visualizados en el terminal del PC mediante el siguiente comando:
+
+\begin{lstlisting}[language=bash]
+tmux -a -t capture
+\end{lstlisting}
+
+
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\linewidth-1cm,keepaspectratio=true]{screen.pdf}
+		\caption{Ventanas iniciales de la interfaz}
+	\end{figure}
+
+Se abrirán 2 pantallas: \textbf{frame} mostrará las imágenes captadas por la cámara, y la otra es una interfaz en el explorador \textbf{chromium} en la dirección \textbf{localhost:5000} que muestra los controles del hardware.
+
+\section{Hardware}
+
+La cámara de alta resolución se enciende automáticamente y tiende a calentarse mucho por esto lo primero que se debe hacer es encender el ventilador. Se debe mover el slider \textbf{Fan Speed} al 100\%.
+
+Cuando se abre por primera vez \textbf{Launch capture} la configuración de exposición de la cámara entra como automático, por lo que se debe colocar en \textbf{MANUAL} dando click en el botón de \textbf{Exposure}. Seguido a esto se debe asegurar que la ganancia (\textbf{Gain}) sea cero y \textbf{AWB Gains} sea \underline{$746,665$}. La velocidad del obturador se recomienda dejarla en $10$ durante la calibración y será modificada mas adelante. 
+	
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\linewidth-2cm,keepaspectratio=true]{camset.png}
+		\caption{Configuración de exposición de la cámara}
+	\end{figure}
+
+El paso siguiente es encender la lámpara, haciendo click en la pestaña \textit{Lamp} y después en el botón verde \textbf{OFF}. Al igual que la cámara tiende a calentarse y por tal motivo se debe encender la ventilación, se recomienda usar entre un 50\% y 75\% dado que a mayor velocidad se aumentan las vibraciones que podrían afectar la toma de fotos.
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\linewidth-2cm,keepaspectratio=true]{lamp.png}
+		\caption{Configuración de exposición de la cámara}
+	\end{figure}
+
+\pagebreak
+
+\section{Calibración}
+\subsection{Polarizador y Analizador}
+Se procede a la calibración de los polarizadores. Lo que se busca primero es encontrar el punto en el cual los polarizadores se encuentren totalmente perpendiculares, es decir, orientación en la cual pase menos luz. Dando click en la ventana \textbf{Frame} y presionando la tecla S aparecerá la medición de saturación, que nos permitirá ver la cantidad de luz que pasa hacia la cámara.  Primero se deja el polarizador en el cero demarcado en el anillo exterior del engranaje, se resetea la posición para que esta sea la posición $0$, seguido a esto se mueve de a pasos el analizador, verificando los niveles de saturación, hasta hallar el menor valor posible, generalmente es \textbf{\textit{Med:3 / Max:4}}. 
+
+
+	\begin{center}
+		\begin{figure}[h]
+			
+			\centering
+				\includegraphics[width=\linewidth-3cm,keepaspectratio=true]{camsaturation.png}
+			\caption{Medición de saturación en XPL}
+		\end{figure}
+	\end{center}
+
+Al encontrar la posición con este valor se resetea el valor de orientación absoluta del analizador para que sea la referencia. Una manera de comprobar si la orientación es la correcta es ubicar el analizador en la orientación \textbf{356}, allí debe encontrarse la posición e polarizadores paralelos, es decir que habrá la mayor saturación posible, normalmente \textbf{\textit{Med:254 / Max:255}}.
+
+Los pasos pueden ser tanto positivos como negativos y se recomienda que sean de magnitud 10, es decir $\pm 10$, cuando se encuentre lejos de los valores y después intentar con pasos menores de hasta $\pm 2$ para encontrar el valor ideal. 
+
+\subsection{Ejes X y Y}
+Teniendo ya calibrada la cámara y polarizadores calibrados, procedemos a cuadrar el área al cual se le tomarán las fotos. Se deben mover los ejes \textbf{X} y \textbf{Y} en la pestaña \textbf{Motors} y después resetearlos, de tal manera que el punto \textbf{X Y $= \{0,0\}$} debe estar ubicado de tal manera en la esquina superior izquierda se vea en la ventana del visor de la cámara.  Para comprobar que este paso esta bien hecho se debe ir a la posición \textbf{X Y $= \{2640,1000\}$}  en la cual deberá aparecer en \textbf{Frame} la esquina inferior derecha de la muestra. Se recomienda hacer este paso en la posición \textbf{ppl} para una mejor visión.
+
+\subsection{Saturación de Luz y Foco}
+\label{sec:ShutterS}
+
+El primer paso es  buscar una coordenada \textbf{X} y \textbf{Y} en la cual haya una región de interés cerca del centro de  la muestra, por ejemplo \textbf{${1500,500}$}. Dando click en la ventana \textbf{Frame} se pulsa la tecla S para mostrar la medición de saturación de luz. Modificando la velocidad de obturación en la pestaña \textbf{camera} se modifica la cantidad de luz, entre mayor sea el tiempo mas luz obtendrá el sensor y por ende más claridad, tanto en XPL como en PPL se debe buscar que el valor máximo de saturación esté entre \textbf{$250$} y \textbf{$254$}. Estos numeros deben ser guardados ya que serán usados en la pestaña \textbf{Photo Sweep} para la toma de muestras.
+
+\begin{center}
+	\begin{figure}[h]
+		
+		\centering
+		\includegraphics[width=\linewidth-2.5cm,keepaspectratio=true]{Shutter.png}
+		\caption{Modificación de la velocidad de obturación de la cámara}
+	\end{figure}
+\end{center}
+
+
+ La medición de foco aparece pulsando la tecla \textbf{F}, este número varia de muestra a muestra y puede llegar a ser negativo, el objetivo es encontrar el mayor valor posible mediante la modificación de la altura a la que se encuentra la muestra, es decir moviendo el eje \textbf{Z}, la recomendación es hacer movimientos con pasos pequeños $\pm 2$.
+
+
+
+\chapter{Preparación de la Muestra}
+\label{ch:PrepSamp}
+
+
+
+La muestra será recibida del líder SEM, quien está encargado de llevar un registro de las muestras entregadas además de haber creado el proyecto y sus respectivas muestras en la plataforma web \url{ onegeo.gmaslab.com}. Los nombres tanto de la muestra como del proyecto no deben tener caracteres especiales ni espacios, se recomienda usar además de los alfanuméricos apenas los siguientes caracteres especiales: \textbf{- : \_   } .
+ 
+
+\bigskip
+
+
+
+La lista de muestras debe ser entregada a la persona encargada de tomar las imágenes y debe estar la información mínima para que puedan ser digitalizadas.
+
+
+\bigskip
+
+Se debe tener cuidado a la hora de manipular las \SDs, evitar su contacto directo con superficies duras ya que pueden haber partículas de polvo o arena que podrían rayar el vidrio y afectar la calidad de las imágenes tomadas por el microscopio. Se recomienda dejarlas sobre una superficie suave que no suelte partículas ni hebras como por ejemplo un paño, espuma o toalla de papel. 
+\begin{center}
+	\begin{figure}[h]
+		
+	\centering
+	\includegraphics[width=\linewidth-2.5cm,keepaspectratio=true]{onpano.jpg}
+	\caption{\SD sobre una superficie suave}
+	\end{figure}
+\end{center}
+
+
+
+Con un paño y alcohol se debe limpiar suavemente la muestra por ambas caras, procurando no dejar huellas ni partículas sobre la muestra. 
+
+\pagebreak
+
+
+\begin{figure}[h]
+	\centering
+
+		\includegraphics[width=\linewidth	,keepaspectratio=true]{cleansd.pdf}
+
+	
+	\caption{Frotar suavemente la \SD}
+\end{figure}
+
+
+
+Se continua colocando la \SD en la placa de sujeción acrílica asegurándola a presión con los triángulos. Se debe hacer apenas la presión necesaria para asegurar la muestra, de lo contrario puede haber riesgo de quebrar el vidrio.
+
+\bigskip
+
+\begin{center}
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth-3cm,keepaspectratio=true]{frame.jpg}
+	\caption{Asegurar la muestra en el marco acrílico}
+	\end{figure}
+\end{center}
+
+\chapter{Toma de Muestras}
+
+Después de haber calibrado y preparado el microscopio, como dice en el capitulo~\ref{ch:PrepMicro},  y haber preparado la muestra como en el capítulo~\ref{ch:PrepSamp}
+se coloca la muestra con su marco acrílico en la superficie de trabajo del microscopio, asegurándola con el brazo metálico en la muesca en la parte izquierda del marco, adicionalmente, presione suavemente la muestra con una esponja plástica, de modo que se asegure que la muestra esta perfectamente sobre la superficie de trabajo.
+
+
+\begin{center}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\linewidth-4.7cm,keepaspectratio=true]{foam.jpg}
+		\caption{El marco acrílico sobre la superficie de trabajo}
+	\end{figure}
+\end{center}
+
+
+\begin{center}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\linewidth-2cm,keepaspectratio=true]{sampleset.png}
+		\caption{El marco acrílico sobre la superficie de trabajo}
+	\end{figure}
+\end{center}
+
+
+En la ventana de Chromium se da click en la pestaña de \textbf{Photo Sweep}, en donde pondremos las especificaciones para la toma de muestras. Para una muestra estándar sólo se debe modificar el espacio \textbf{Sweep name}, en donde se debe colocar el nombre de la muestras, tal y como esté en la plataforma web, y los espacios de \textbf{Exposure Times}, allí se deben colocar los valores hallados para el tiempo de obturación, en el capitulo \ref{ch:PrepMicro} sección \ref{sec:ShutterS} para XPL y PPL respectivamente.
+
+
+Finalmente se da click en \textbf{Sweep OFF} y el microscopio tomará las fotos automáticamente. El proceso demora entre 20 y 24 minutos.\footnote{El directorio donde se guarda la información en el PC de procesamiento puede ser modificado de acuerdo a la disponibilidad en los discos duros mediante la modificación en el script "\textbf{Launch Capture.sh}"}
+
+\chapter{Procesamiento de fotografías}
+
+Una vez tomadas todas las fotografías y ubicadas en el directorio en el PC de procesamiento podemos dar inicio a la adecuación de las imágenes. Se debe recordar que para hacer estos procedimientos se necesita que el computador tenga una conexión a internet.
+
+\section{Check Pending}
+
+Para comenzar debemos asegurarnos de que tanto la muestra como el proyecto estén creadas en el servidor, para esto fue creado el script \textbf{check\_pending.sh}, ubicado normalmente en \textbf{/data1/images/stage/pending}. Este programa usa como base un archivo llamado "\textbf{pending}", que debe estar ubicado en el directorio según esté especificado en el script (generalmente \textbf{/data1/images/stage/pending})\footnote{Este directorio puede ser modificado de acuerdo a la disponibilidad de espacio en los discos duros modificando las primeras lineas del script}. En este archivo debe estar escrito el nombre de la muestra y el proyecto separados por un espacio. Ejemplo:
+
+\begin{lstlisting}[language=bash]
+Nombre-Muestra1 Nombre-Proyecto1 
+Nombre-Muestra2 Nombre-Proyecto1
+Nombre-Muestra1 Nombre-Proyecto2
+\end{lstlisting}
+
+El script también revisará si existen las carpetas de las muestras como tal en la ruta especificada para guardar las imágenes a procesar.
+Se corre el archivo usando el comando:
+
+\begin{lstlisting}[language=bash]
+. /data1/images/stage/check_pending.sh
+\end{lstlisting}
+
+Este proceso dura apenas unos segundos y presenta como resultado mostrará en el terminal usado un mensaje por cada muestra. Si la respuesta es un "\textbf{OK}"  seguido de un número código, nos indicará que la muestra esta correctamente identificada, que existe una ruta en el servidor y que puede ser procesada, de lo contrario puede que el nombre de la muestra y/o proyecto estén errados o que no se hayan creado en la plataforma web. Si existe algún error debe ser corregido antes de iniciar el procesamiento.\footnote{el terminal donde se corre este script se cerrará automáticamente 15 segundos despues de haberse corrido.}
+
+\section{Process Pending}
+
+Una vez se haya recibido una respuesta positiva de todos las muestras a procesar desde el script \textbf{check\_pending.sh}, se puede comenzar con el procesamiento de las imágenes usando el comando:
+
+\begin{lstlisting}[language=bash]
+. /data1/images/stage/process_pending.sh
+\end{lstlisting}
+  
+ Al igual que el check pending, este archivo tomará como base el archivo \textbf{pending}, una ruta a la información \textbf{ /data1/images/stage/} y una ruta de destino de los resultados \textbf{/data2/images/ensambles}. Todas estas rutas son modificables en el codigo del script. 
+
+El algoritmo en \textbf{process\_pending.sh} revisa que no exista el archivo "done" en la carpeta de muestras (lo que significaría que la muestra ya fue procesada exitosamente) y seguido a esto realiza el proceso de Stitching de las imágenes. La adecuación de las imágenes demora aproximadamente 2 horas. Finalmente el mismo programa se encargará de subir las pirámides a la ubicación exacta en el servidor y quedarán listas para el cliente.
+
+El procesamiento de las imágenes requiere un alto uso de recursos computacionales, por lo que se recomienda no correr mas programas en el computador al mismo tiempo, además un apagón del equipo durante este proceso causa un error por lo que en ese caso se sebe recomenzar la adecuación de la ultima muestra desde el principio.
+
+ \subsection{Reupload pyramids}
+ 
+De vez en cuando sucede que la pirámide multirresolución de uno o dos ángulos de una muestra no se transfiere correctamente al servidor, aún cuando fueron creadas. Esto se manifiesta visualmente como ángulos de la muestra que no se ven en la plataforma web, estando otros ángulos presentes. Si esto pasa, el script \textbf{ /data1/image/stage/reupload-pyramids.sh} intenta repetir la operación de subida. Recibe como argumentos la ruta al archivo "\textbf{pending}" y la ruta a la carpeta donde se generan los ensambles de las muestras (carpeta "\textbf{ensembles}", fijada en el script process\_pending.sh).
+ 
+\section{Toma de Thumbnails y Macros}
+
+El \textbf{Thumbnail} y \textbf{macro} son las imágenes de muestra que aparecen en la plataforma web como vista previa para identificación antes de entrar a la herramienta del microscópico virtual. Esta imagen debe ser tomada  con buena resolución y retroiluminada. La foto debe llamarse de forma idéntica que la muestra y estar dentro de una carpeta llamada igual al nombre del proyecto además debe tener la extensión .jpg o .png. El script generara tanto el thumbnail como el macro y los subirá automáticamente a las carpetas en el servidor y puede correrse incluso antes de que la muestra sea procesada, siempre y cuando esté creada en la plataforma web de \OG.
+
+\begin{center}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\linewidth-2cm,keepaspectratio=true]{BaseRetro.jpg}
+		\caption{Base para la toma de Thumbnails y macros.}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\linewidth-2cm,keepaspectratio=true]{retroilu.jpg}
+		\caption{Muestra sobre base de retroiluminación.}
+	\end{figure}
+\end{center}
+
+
+
+Se recomienda tomar la fotografía con un celular con la app \textbf{OfficeLens} y sobre la base fija con luz retroiluminada (Ver imágenes). Esta aplicación permite tomar la imagen con gran resolución corrigiendo el problema de posibles inclinaciones, foco y luz, además permite modificar el área de corte deseada, guardándola en el formato que necesita el script.\footnote{Se debe entrar a las opciones de la aplicación para seleccionar el mayor formato posible, el cual está limitado por el hardware del dispositivo móvil.}
+
+
+\begin{center}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\linewidth-5cm,keepaspectratio=true]{officeLens.png}
+		\caption{Aplicación propuesta para la toma de imágenes.}
+	\end{figure}
+\end{center}
+
+
+\begin{center}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\linewidth-5cm,keepaspectratio=true]{Lens1.png}
+		\caption{Uso de Office Lens.}
+	\end{figure}
+\end{center}
+
+\begin{center}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth-5cm,keepaspectratio=true]{Lens2.png}
+	\caption{Afinación de corte en Office Lens.}
+\end{figure}
+
+\end{center}
+
+\backmatter
+
+%
+%\bibliography{bibliography} % Use the bibliography.bib file for the bibliography
+%\bibliographystyle{plainnat} % Use the plainnat style of referencing
+
+%----------------------------------------------------------------------------------------
+
+\printindex % Print the index at the very end of the document
+
+\end{document}

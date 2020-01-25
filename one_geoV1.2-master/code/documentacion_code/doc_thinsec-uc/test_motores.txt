@@ -1,0 +1,36 @@
+
+Documento PulsedPin.h
+importa la libreria arduino.h
+genera una clase PulsedPin.h, con los siguientes atributos:
+  -pin
+  -state
+  -active_high
+  -trigger_time
+  -active_time
+
+metodos:
+  -PulsedPin
+     parametros:
+     tipo entero, y tipo logico 1 o 0	
+  -pulse
+     parametros:
+     tipo entero de 16 bits sin signo
+  -update
+     sin parametros
+Documento PositionEvents.cpp
+importa las siguiente librerias para el control de posicionamiento de  uno o dos motores
+librerias 
+AccelStepper---> velocidad y posicionamiento de los motores.
+Bounce2---> detector y control de la señal especifica para la activación de los motores
+PositionEvents.h Se definen una clase llamada PositionEvent las cuales tiene como atributos y funciones:
+--una estructura tipo enum llamada SweepState, que almacena variables de tamaño 1 byte
+  -Idle-->
+  -PreShootWaiting-->
+  -Shooting-->
+  -Transiting--> 
+Luego una condicion, que permite elegir el control de un o dos motores, mediante la constate
+TWO_POSEV_AXES, con respecto a ella se genera una definicion de variables segun sea el caso para
+uno o dos motores. Con respecto a las funciones para la creacion.
+ Funciones fundamentales como:
+ -set_wait_time: funcion para colocar el tiempo de espera microsegundos.
+ -set_shutter_time:

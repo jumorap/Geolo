@@ -1,0 +1,77 @@
+En este apartado se realiza la configuracion para el arranque de la aplicacion
+OneGeo V1.2 ejecutada sobre python 2
+1. Inicialmente se encontraron errores en la carpeta del proyecto
+esto causado por una actualizacion de software sobre el equipo ya que su sistema operativo
+inicial estaba causando inconvenientes para el desempeño del proyecto.
+2. Posteriormente se formateo el equipo instalando uan version menor a la que tenia (Ubuntu 16.10 -Kubuntu)
+a Ubuntu 16.04 LTS (Long Term Support "4 años").
+3. Se redirecciono las variables que permiten la ejecucion del programa, presentes en el shell Launch ubicado
+en la carpteta code--->thinsec; las modificaciones fueron las siguientes: 
+gui_script y stage_dir
+4.Luego se habilito permisos de ejecucion sobre los archivos frame_observer.py ubicado en 
+code-->pgr-->client
+ y flyzmqserver ubicado en la carpeta
+code-->pgr-->server-->bin-->relaese
+5. presento un inconveniente con la dependencia gevent, esta depencia se logro instalar con el 
+gestor de paquetes pip.
+6.libreria libglademm-2.4-dev encontrada en repositororios de linux-Xenial, las cuales nos permitieron
+llevar a cabo la instalación del SD flycapture sobre la distribucion.
+https://ubuntu.pkgs.org/18.04/ubuntu-universe-amd64/libzmqpp4_4.1.2-0ubuntu2_amd64.deb.html
+7. La libreria anteriormente mencionada, pertenece a una version siguiente
+a la que se esta utilizando, por ello, se dirigio el objetivo a la compilacion
+nuevamente del el ejecutable flyzqmserver ubucado en code-->server
+8. se instala python 3,ubicando en la carpeta /usr/src
+https://blog.carreralinux.com.ar/2018/04/python-3-en-linux-version-mas-reciente/
+9. de los repositorios de versiones se decidio instalar anaconda,
+un software que proporciona el entorno entre openCV y python. 
+https://repo.continuum.io/archive/ --> Anaconda3-5.1.0-Linux-x86_64.sh compatible con python 3
+https://stackoverflow.com/questions/54801513/how-can-i-download-anaconda-for-python-3-6
+10. Se corrigio el problema de cv2, libreria de opencv:
+
+https://github.com/jayrambhia/Install-OpenCV/tree/master/Ubuntu--> se descargo este repositorio y bajo la 
+carpeta 2.4 se ejecute un shell de instalacion, donde se descargo el .zip de la version 2.4.10
+https://opencv.org/releases/page/5/ donde se movio el archivo a la carpeta 2.4 para 
+su posterior instalacion.
+11. La libreria libzmqpp4, es una version de dependencia utilizada para una distribucion 
+superior a la que se esta ejecutando, por lo cual la depencia correspondieten es 
+libzmqpp-dev (version 3 para xenial-Ubuntu 16.04), por ello el archivo compilado ubicado
+en la carpete one_geov1.2-->code-->pgr-->server-zmq-->bin-->relase-->flyzmqserver debe volver
+a generarse.
+12. GENERACION DE flyzqmserver, error: main.h:15:32: fatal error: boost/filesystem.hpp: No existe el archivo o el directorio
+solucion: sudo apt-get install libboost-dev
+13. Instalacion de zmqpp, se tomo como referencia el enlace https://tuananh.org/2015/06/16/how-to-install-zeromq-on-ubuntu/
+luego, se encontro una erro con los enlaces simbolicos para la ejecucion del archivo ./autogen, de la carpeta zeromq
+para su solucion se creo un enlace simbolico ln -s /usr/bin/libtoolize /usr/bin/libtool para poder correr el ./autogen	
+14. Se instalo una version superior de zeromq, zeromq-4.1.7
+15. Al tratar de instalar una dependencia, de mas bajo nivel del programa antes configurado, presento un error 
+con respecto a un ejecutable llamado -libboost unit test framework, perteneciente a la dependencia 
+libboost-all-dev. 
+Se procedio a su instalacion sudo apt-get install libboost-all-dev
+16. En la instalacion zmqpp se evidencio una llamada a funciones los cuales no se obtenia la libreria o dependencia 
+para su ejecucion, se corrigio con sudo apt-get install libzmqpp-dev
+17. Librerias completas para compilacion de programa ejecutable del servidor.
+18. El enlace simbolico, libzmqpp.so.4, se encontraba en la ubicacion
+/usr/local/lib, lo cual nel fichero dinamico llama  a las librerias 
+compartidas a la direccion /usr/lib/x86_64-linux-gnu/. para corregir este
+problema se genero un enlace simbolico suave desde la primera direccion donde
+se encontraba la libreria a la direccion de llamado del programa
+comando ln -s /usr/local/lib/libzmqpp.so.4 /usr/lib/x86_64-linux-gnu/libzmqpp.so.4.
+16. para encontrar la ubicacion de estas librerias se uso
+el comando ldconfig -p 
+17. para saber las librerias conpartidas especificas utilizados por el 
+archivo dinamico se utilizo el comando ldd -v flyzmqserver.
+18. Al arrancar los servicios del servidor hacia falta la carpeta image/stage.
+*-----------------------------------------------------------------------*
+19. para el cliente se ubicaron los siguientes errores.
+no se encontro el archivo la libreria zmq, se corrigio instalando
+1paquetes de pyzmq
+sudo apt-get install pyzmq
+ sudo pip install --upgrade pyzmq
+20. Se volvio a generar el ejecutable del cliente de la misma forma que se realizo
+con el servidor, se encontro un inconveniente con la libreria utils.hpp
+realizada por el creador del proyecto, la cual realiza una busqueda de bugs
+sobre el programa. Esta libreria se encontraba en la carpeta del servidor;
+para no llamarla desde ahí para el compilador, (como una buena practica). Se
+decidio enviarla a la carpeta de librerias del sistema operativo ubicada
+en /usr/include. Después del proceso anterior, la generacion del archivo 
+dinamico fue correcta.

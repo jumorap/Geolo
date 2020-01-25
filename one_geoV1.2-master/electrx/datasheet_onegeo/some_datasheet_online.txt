@@ -1,0 +1,11 @@
+--->Driver Motors<----
+https://www.pololu.com/category/120/stepper-motor-drivers
+<<<<<<< HEAD
+https://www.luisllamas.es/motores-paso-paso-arduino-driver-a4988-drv8825/
+=======
+https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/
+https://www.arduino.cc/en/Hacking/PinMappingSAM3X
+>>>>>>> 3cc48e6008141497f9104a40defb098eace7ad5e
+http://www.kerrywong.com/2014/09/21/on-arduino-due-pwm-frequency/
+>>>comunicación uart.
+https://copperhilltech.com/blog/how-to-use-the-native-usb-of-the-arduino-due-for-highspeed-communication/

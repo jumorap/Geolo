@@ -1,0 +1,372 @@
+EESchema Schematic File Version 2
+LIBS:mainboard-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:RMC
+LIBS:arduino_shieldsNCL
+LIBS:opendous
+LIBS:m-bed
+LIBS:stepper_drivers
+LIBS:dc-dc-dsun
+LIBS:gmas
+LIBS:mainboard-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 8
+Title "OneGeo Controller Shield"
+Date "2017-05-11"
+Rev "v1"
+Comp "Gmas+"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L VCC #PWR035
+U 1 1 523A3B4A
+P 6200 2350
+F 0 "#PWR035" H 6200 2450 30  0001 C CNN
+F 1 "VCC" H 6200 2450 30  0000 C CNN
+F 2 "" H 6200 2350 60  0001 C CNN
+F 3 "" H 6200 2350 60  0001 C CNN
+	1    6200 2350
+	1    0    0    -1  
+$EndComp
+Text Notes 1900 2200 0    60   ~ 0
+Emergency Stop switch (Normally Closed type)\nuse jumper if not present\n\n
+$Comp
+L 74LS244 U2
+U 1 1 523A33CC
+P 5100 3950
+F 0 "U2" H 5150 3750 60  0000 C CNN
+F 1 "74ACT244" H 5200 3550 60  0000 C CNN
+F 2 "w_smd_dil:soic-20" H 5100 3950 60  0001 C CNN
+F 3 "" H 5100 3950 60  0001 C CNN
+	1    5100 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR036
+U 1 1 51E4F650
+P 10650 2050
+F 0 "#PWR036" H 10650 2150 30  0001 C CNN
+F 1 "VCC" H 10650 2150 30  0000 C CNN
+F 2 "" H 10650 2050 60  0001 C CNN
+F 3 "" H 10650 2050 60  0001 C CNN
+	1    10650 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND-RESCUE-mainboard #PWR037
+U 1 1 51E4F64F
+P 10650 2850
+F 0 "#PWR037" H 10650 2850 30  0001 C CNN
+F 1 "GND" H 10650 2780 30  0001 C CNN
+F 2 "" H 10650 2850 60  0001 C CNN
+F 3 "" H 10650 2850 60  0001 C CNN
+	1    10650 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C-RESCUE-mainboard C2
+U 1 1 51E4F64E
+P 10650 2450
+AR Path="/51E4F64E" Ref="C2"  Part="1" 
+AR Path="/5239FA54/51E4F64E" Ref="C2"  Part="1" 
+F 0 "C2" H 10700 2550 50  0000 L CNN
+F 1 "100n" H 10700 2350 50  0000 L CNN
+F 2 "opendous:SM0805_Opendous" H 10650 2450 60  0001 C CNN
+F 3 "" H 10650 2450 60  0001 C CNN
+	1    10650 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C-RESCUE-mainboard C1
+U 1 1 51E4F640
+P 10100 2450
+AR Path="/51E4F640" Ref="C1"  Part="1" 
+AR Path="/5239FA54/51E4F640" Ref="C1"  Part="1" 
+F 0 "C1" H 10150 2550 50  0000 L CNN
+F 1 "100n" H 10150 2350 50  0000 L CNN
+F 2 "opendous:SM0805_Opendous" H 10100 2450 60  0001 C CNN
+F 3 "" H 10100 2450 60  0001 C CNN
+	1    10100 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND-RESCUE-mainboard #PWR038
+U 1 1 51E4F630
+P 10100 2850
+F 0 "#PWR038" H 10100 2850 30  0001 C CNN
+F 1 "GND" H 10100 2780 30  0001 C CNN
+F 2 "" H 10100 2850 60  0001 C CNN
+F 3 "" H 10100 2850 60  0001 C CNN
+	1    10100 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR039
+U 1 1 51E4F62B
+P 10100 2050
+F 0 "#PWR039" H 10100 2150 30  0001 C CNN
+F 1 "VCC" H 10100 2150 30  0000 C CNN
+F 2 "" H 10100 2050 60  0001 C CNN
+F 3 "" H 10100 2050 60  0001 C CNN
+	1    10100 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L DIODE D301
+U 1 1 51B65AB0
+P 1900 2750
+F 0 "D301" H 1900 2850 40  0000 C CNN
+F 1 "1N4148" H 1900 2650 40  0000 C CNN
+F 2 "w_smd_diode:SOD323" H 1900 2750 60  0001 C CNN
+F 3 "" H 1900 2750 60  0001 C CNN
+	1    1900 2750
+	1    0    0    1   
+$EndComp
+$Comp
+L R-RESCUE-mainboard R305
+U 1 1 51B4ECD2
+P 1300 3200
+F 0 "R305" V 1380 3200 50  0000 C CNN
+F 1 "4k7" V 1300 3200 50  0000 C CNN
+F 2 "opendous:SM0805_Opendous" H 1300 3200 60  0001 C CNN
+F 3 "" H 1300 3200 60  0001 C CNN
+	1    1300 3200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L +V_LOGIC #PWR040
+U 1 1 51B4EC55
+P 1550 2150
+F 0 "#PWR040" H 1550 2120 30  0001 C CNN
+F 1 "+V_LOGIC" H 1550 2250 30  0000 C CNN
+F 2 "" H 1550 2150 60  0001 C CNN
+F 3 "" H 1550 2150 60  0001 C CNN
+	1    1550 2150
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_2 P302
+U 1 1 51B4EBF7
+P 800 2850
+F 0 "P302" V 750 2850 40  0000 C CNN
+F 1 "ESTOP" V 850 2850 40  0000 C CNN
+F 2 "RMC:CONN_KK_2.54_2W" H 800 2850 60  0001 C CNN
+F 3 "" H 800 2850 60  0001 C CNN
+	1    800  2850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L R-RESCUE-mainboard R304
+U 1 1 51B4EBD5
+P 1550 2400
+F 0 "R304" V 1630 2400 50  0000 C CNN
+F 1 "100k" V 1550 2400 50  0000 C CNN
+F 2 "opendous:SM0805_Opendous" H 1550 2400 60  0001 C CNN
+F 3 "" H 1550 2400 60  0001 C CNN
+	1    1550 2400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND-RESCUE-mainboard #PWR041
+U 1 1 51B4EBC7
+P 1300 3500
+F 0 "#PWR041" H 1300 3500 30  0001 C CNN
+F 1 "GND" H 1300 3430 30  0001 C CNN
+F 2 "" H 1300 3500 60  0001 C CNN
+F 3 "" H 1300 3500 60  0001 C CNN
+	1    1300 3500
+	-1   0    0    -1  
+$EndComp
+Text GLabel 7600 3450 2    60   Output ~ 0
+/X_EN_BUF
+Text GLabel 7600 3550 2    60   Output ~ 0
+/Y_EN_BUF
+Text GLabel 7600 3650 2    60   Output ~ 0
+/Z_EN_BUF
+Text GLabel 7600 3850 2    60   Output ~ 0
+/E1_EN_BUF
+Text GLabel 7600 3750 2    60   Output ~ 0
+/E0_EN_BUF
+Text GLabel 2300 2750 2    50   Output ~ 0
+ESTOP
+Text GLabel 3150 3750 0    60   Input ~ 0
+E0_EN
+Text GLabel 3150 3850 0    60   Input ~ 0
+E1_EN
+Text GLabel 3100 3650 0    60   Input ~ 0
+Z_EN
+Text GLabel 3100 3550 0    60   Input ~ 0
+Y_EN
+Text GLabel 3100 3450 0    60   Input ~ 0
+X_EN
+Text Notes 1750 3050 0    50   ~ 0
+Or any small signal diode
+Text Notes 8700 3700 0    80   ~ 0
+Active low
+Text Notes 10200 3350 0    60   ~ 0
+VCC = 5V 
+Text Notes 9500 4100 0    60   ~ 12
+Must use ACT (or HCT) type buffers. \nInputs are compatible with \n3.3V or 5V logic
+Connection ~ 6500 3750
+Wire Wire Line
+	6500 3050 6500 3750
+Connection ~ 6300 3550
+Wire Wire Line
+	6300 3050 6300 3550
+Connection ~ 6600 2500
+Connection ~ 6400 2500
+Wire Wire Line
+	6500 2500 6500 2650
+Connection ~ 6200 2500
+Wire Wire Line
+	6300 2650 6300 2500
+Wire Wire Line
+	1550 4450 4400 4450
+Wire Wire Line
+	10650 2850 10650 2650
+Wire Wire Line
+	10100 2050 10100 2250
+Wire Wire Line
+	2100 2750 2300 2750
+Wire Wire Line
+	5800 3850 7600 3850
+Wire Wire Line
+	5800 3650 7600 3650
+Wire Wire Line
+	5800 3450 7600 3450
+Wire Wire Line
+	4400 3750 3150 3750
+Wire Wire Line
+	3100 3550 4400 3550
+Wire Wire Line
+	3100 3450 4400 3450
+Wire Wire Line
+	3100 3650 4400 3650
+Wire Wire Line
+	4400 3850 3150 3850
+Wire Wire Line
+	5800 3550 7600 3550
+Wire Wire Line
+	5800 3750 7600 3750
+Wire Wire Line
+	1300 3500 1300 3450
+Wire Wire Line
+	1150 2750 1700 2750
+Wire Wire Line
+	10100 2650 10100 2850
+Wire Wire Line
+	10650 2250 10650 2050
+Wire Wire Line
+	4150 4350 4400 4350
+Connection ~ 4150 4450
+Wire Wire Line
+	6200 2350 6200 2650
+Wire Wire Line
+	6400 2500 6400 2650
+Connection ~ 6300 2500
+Wire Wire Line
+	6600 2500 6600 2650
+Connection ~ 6500 2500
+Wire Wire Line
+	6200 3050 6200 3450
+Connection ~ 6200 3450
+Wire Wire Line
+	6400 3050 6400 3650
+Connection ~ 6400 3650
+Wire Wire Line
+	6600 3000 6600 3850
+Connection ~ 6600 3850
+Wire Wire Line
+	1150 2950 1300 2950
+Wire Wire Line
+	1550 2650 1550 4450
+Connection ~ 1550 2750
+Wire Notes Line
+	8400 3400 8600 3400
+Wire Notes Line
+	8400 3950 8600 3950
+Wire Notes Line
+	8600 3950 8600 3400
+Wire Wire Line
+	4150 4350 4150 4450
+NoConn ~ 4400 4050
+NoConn ~ 4400 4150
+NoConn ~ 5800 4050
+NoConn ~ 5800 4150
+NoConn ~ 5800 3950
+NoConn ~ 4400 3950
+Wire Wire Line
+	6200 2500 6600 2500
+Text Notes 1900 2500 0    60   ~ 0
+???
+Wire Notes Line
+	2100 2550 2100 2900
+Wire Notes Line
+	2100 2900 1700 2900
+Wire Notes Line
+	1700 2900 1700 2550
+Wire Notes Line
+	1700 2550 2100 2550
+$Comp
+L R R231
+U 1 1 5936F033
+P 6850 2850
+F 0 "R231" V 6930 2850 50  0000 C CNN
+F 1 "10k" V 6850 2850 50  0000 C CNN
+F 2 "opendous:SM0805_Opendous" V 6780 2850 50  0001 C CNN
+F 3 "" H 6850 2850 50  0001 C CNN
+	1    6850 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L R_Pack04 RN23
+U 1 1 5936F12E
+P 6400 2850
+F 0 "RN23" V 6100 2850 50  0000 C CNN
+F 1 "10k" V 6600 2850 50  0000 C CNN
+F 2 "Resistors_SMD:R_Array_Concave_4x0603" V 6675 2850 50  0001 C CNN
+F 3 "" H 6400 2850 50  0001 C CNN
+	1    6400 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 2650 6850 2650
+Wire Wire Line
+	6850 2650 6850 2700
+Wire Wire Line
+	6850 3000 6600 3000
+$EndSCHEMATC

@@ -1,0 +1,25 @@
+los pasos para modificar, el codigo desde su ejecutable principal
+ubicado, en la carpera code-->pgr-->serverzmq--archivo main.cpp.
+en la linea 43 y 44, se encuentra la creacion del objeto camara para 
+posterirores configuraciones, el paso principal para el reconocimiento 
+de configuraciones iniciales se encuentra importando la libreria (en 
+este caso la de flycapture ubicada en las librerias del sistema operativo
+en la carpeta include "libreria instaladas por el usuario" ubicadas en la 
+raiz en la carpeta usr), el archivo donde importa las librerias antes mencio
+nadas se encuentra en el main.h de la misma carpeta.
+-linea 54 y 55 la opcion de configuracion y formato de la imagen.
+-linea 240 funcion con argumento camera_driver.
+-linea 121, utiliza funciones de la clase camera que pertenece a flycapture.
+-lines 207, utiliza una funcion para el objeto image de la libreria flycapture.
+-linea 224, igualmente.
+-linea 346 a 351.
+-linea 365, utiliza la clase Image en la funcion generada, igual que las ante
+riores debe modificarse en su totalidad.
+-linea 386, arguementos objetos de flycapture, procedimiento igual.
+-linea 522,  cambio de la funcion por argumento camera de flycapture.
+
+El archivo que debe configurarse totalmente es el de camera_driver.cpp.
+Es conveniente mantener la convension de asignacion de funcion (nombre),
+que se encuentra inicialmente en el proyecto, esto para mantener
+la arquitectura y las buenas practicas presentes en el mismo. 
+

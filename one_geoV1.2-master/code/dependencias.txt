@@ -1,0 +1,2 @@
+https://www.flir.com/support-center/iis/machine-vision/application-note/getting-started-with-flycapture-2.x-and-linux/
+--- librerias llamadas en los archivos del servidor, codigo fuente camera.driver.cpp camera.driver.hpp

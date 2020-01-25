@@ -1,0 +1,50 @@
+Source,/home/fredy/onegeo-hw/electrx/mainboard/mainboard.sch,,
+Kicad Rev,Eeschema 4.0.4+dfsg1-stable,,
+Generated Date,vie 08 sep 2017 11:55:20 COT,,
+,,,
+Title,OneGeo Controller Shield,,
+Company,Gmas+,,
+Revision,v1,,
+Date Issue,2017-05-11,,
+,,,
+Reference,Value,Note,Library
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,DC-DC-DSUN,dc-dc-dsun,DC-DC-DSUN
+,FUSE 10A,standard,FUSE
+,CONN_02X03,conn,CONN_02X03
+,CONN_01X02,conn,CONN_01X02
+,jumper,device,Jumper
+,LOGO_GMAS,RMC,LOGO_OSHW
+,A4990,gmas,A4990
+,IXDI604,gmas,IXDI604
+,PS-ON,mainboard-cache,CONN_1
+,Conector kk 4 way,mainboard-cache,CONN_4
+,AUX-4,RMC,CONN_18
+,AUX-2,mainboard-cache,CONN_5X2
+,Borne 2 pin,mainboard-cache,CONN_2
+,SERIAL1,mainboard-cache,CONN_6
+,CONN_6X2,mainboard-cache,CONN_6X2
+,2N7002,transistors,IRLIZ44N
+,IRLZ44N,transistors,IRLZ44N
+,IRF9530,transistors,IRF4905
+,1.5k,mainboard-rescue,R-RESCUE-mainboard
+,330R,mainboard-rescue,R-RESCUE-mainboard
+,100k,mainboard-rescue,R-RESCUE-mainboard
+,10k,device,R
+,4k7,mainboard-rescue,R-RESCUE-mainboard
+,2k,device,R
+,10k,mainboard-cache,R_PACK4
+,ARDUINO_DUE_SHIELD,RMC,ARDUINO_DUE_SHIELD
+,RESET,mainboard-cache,SW_PUSH
+,74ACT244,74xx,74LS244
+,Z,RMC,POLOLU
+,24C512,mainboard-cache,24C512
+,4050_RMC,RMC,4050_RMC

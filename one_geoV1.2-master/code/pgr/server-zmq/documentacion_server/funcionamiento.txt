@@ -1,0 +1,118 @@
+//Descripcion detallada funcionamiento de la parte del servidor
+//onegeo.
+Inicialmente sobre el programa principal, se genera 
+una variablre tipo caracter y arreglo cuyo nombre es USAGE, 
+presenta una cadena de texto, donde indica la conexion del ejecutable
+dinamico y posibles opciones de ejecucion
+
+luego se genera un objeto llamado debug_cerr para el manejo de errores.
+
+Acontinuacion se abre con el manejador de comunicacion zmqpp
+1. una variable zmq_ctx obejto de la clase context encargada de verficar
+la version del manejador y el ciclo de vida de los sockets
+2. se genera un objeto cmd_pull cuyos argumentos de entrada tiene como 
+el zmq_ctx, y el tipo de socket, para este caso se usa la funcion 
+socket_type y se le agrega el parametro pull, esta funcion esta encargada
+del manejador de las configuraciones iniciales de la camara
+3. se genera un nuevo objeto de tipo socket llamado state_pub, cuyos parametros
+de entrada son zmq_ctx, y una configuracion del tipo de socket pub, que nos 
+permite ver el estado de las actualizaciones o modificaciones pertinentes
+del sistema en ejecucion
+4.se genera otro objeto de la clase socket llamada video_pub, que recibe 
+los mismos argumentos mencioandos anterioremente y esta encargado de la captura
+de los datos generados por la camara.
+5.Se genera otro objeto de la misma clase con el nombre image_push,
+recibe como parametros los zmq_ctx y el tipo de socket push, esta encargado
+de llevar los datos recogidos por parte de la camara y escribir el proceso
+correspondiente para esta labor.
+6.se genera otro socket igual a los anteriores con el nombre de worker_cmd_push
+encargado de emitir las ordenes para la ejecucion de los hilos de trabajo.
+7.socket worker_ret_pull encargado de recibir los mensajes que generan 
+los hilos mientras se estan ejecutando.
+8 socket imager_cmd_push, respuestas convenientes para los mensajes recibidos
+por el lector de las acciones realizadas por los hilos
+9.Se genera, un objeto tipo PNGOption, llamado de la clase de PNGOption de la
+libreria Flycapture2. En donde se piensan almacenar configuraciones, el proceso
+de captura de la imagen.
+10.una funcion donde ubica un direccionamiento deacuerdo a los procesos, que 
+se van desarrollando en la captura de la imagen.
+11. genera un hilo atomico llamado axis_idx, de tipo unisignment. Haciendo re
+ferencia a que no puede tomar valores negativos y van desde 0-255 posibilidades.
+se genera, otras variables atomic de tipo boolen para correr, capturar y espera
+de la operaciones basicas de la camara.
+12. Se generan unos vectores o listas de tipo string y double.
+la caracteristica de este tipo de variables son con la intencion
+de manejar memoria. pueden ser grande, pequeñas o vacias deacuerdo al inicio
+del proceso.
+13. por ultimo un vector de procesos  llamado workers
+14. En la funcion main, del script main.cpp. inicialmente, se crea
+un apuntador automatico, que almacena una y localiza un objeto con la funcion
+make_shared de la clase cameraDriver, esta recibe argumentos de la clase camera
+de las funciones de flycapture y crea un objeto de la misma. Sun funcion
+principal para la variable creada, es retornarle un punturo.
+15.Se genera un control de errores, si puede presentarse que el apuntador 
+automatico logre generarse, este tipo de variable Error, es generada
+con funciones integradas en la libreria Flycapture.
+16. se crea una una funcion llamada duration, presente en la libreria
+main.h, en la cual en el principal, presente una variable repor_period.
+Su responsabilida es informar, como se esta ejecutando los procesos
+del programa para poder informar el tiempo y eventualidades que posiblemente
+puedan presentarse.Se aclara, que las escalas de tiempo que utiliza son 
+los que proporciona la libreria de c++ llamada chrono
+17. funciones opt args.
+18. funcion parse_command_line.
+19.Para guardar las opciones relacionadas con la imagen, se asignan variables
+con respecto la funcion save_setting, presentes en flycapture y de las cuales
+se especifica el nivel de compresion y el entrelazamiento.
+20.para la localizacion del directorio, donde se van a guardar los cambios
+realizados, se realiza una funcion, perteneciente a la libreria Boost.
+21. dentro de esta funcion se encuentra una funcion de la libreria utils.hpp.
+que fue creada, en ella indica un mensaje de error, si en los parametros
+inicilaes de ejecucion no se encuentra la direccion donde se almacenara
+los datos.
+22.bind_socket
+23.iniciliza los sockets para el manejo inicial de la camara y las comunicacion
+con el resultado de los procesos, enviados por mensajes con la variable 
+worker_ret_pull de tipo socket.
+24 Linea de codigo de 72-80 pendiente.
+25. Se generan unos variables tipo time_point, los cuales llevaran 
+a cabo un poceso de antes y despues para el ejecucion del programa.
+26. Ingresa un ciclo, que genera condicionales para hacer el tratamiento
+de informacion otorgada por la camara, en lla se compara y se mantinen
+en actividad el envio del estado a la variable state_pub
+, sobre la interfaz generada con el puntero atuomativo cmadrv, por 
+el formato que maneja Json, se genera los primeras configuraciones de 
+conexion de la camara, ademas de otorgar un dato llamado __cfg__
+27.Seguido se genera un condicional, que llama la funcion poller, 
+retorna un valor booleano, cuyo objetivo es verificar que los sockets
+se hallan inicilaizado correctamente, después de de eso, genera
+de la libreria zmqpp un variables message de tipo message, el cual
+se hace eficaz, cuando dentro del condicional anidado puede comprobarse 
+que el socket cmd_pull logr+o generar las condiciones principales
+sobre el manejo de la camara, eso con el fin de poder entablar un
+canal de comunicacion de comandos con Json y tener un proceso detallado
+de los cambios que se pueden presentar.
+Igualmente pasa con el socket worker_ret_pull el encargado de enviar los 
+mensajes, la unica diferencias es que apartir de sus respuestas
+define el siguiente estado o proceso de la aplicacion.
+28. de manera consecuente, genera un debug_cerr(libreria generada por el
+creador del proyecto)
+donde comienza  a eliminar los procesos almacenados en un vector
+con unos ciclos for.
+Envia mensajes de salida y desconexion de la camara.
+cierra los sockets, creados, junto con la configuración predeterminada
+para el manejo de la imagen y retornando cero en la funcion principal.
+n. Se presentan varisas dunciones definidas como send_socket, presenta una
+sobrecarga, ya que pueden ser diferentes los datos que pueden utilizarse 
+para obtener un mensaje de la forma en que operan los sockets de actualizacion
+de los comandos basicos de la camara, como de la ejecucion tanto para
+enviar y recibir operacion sobre la imagen.
+n.1 Funcion Handle_command, maneja los estados de la camara.
+n.2 funcion State_send. Conocemos las respuestas de los sockets, para infor
+marnos en que estado utilizamos la funcion para poder indicarle a la 
+camara el siguiente proceso a ejecutar.
+n.3 funcion que genera la orden a ciertos procesos para la captura de la
+imagen y que logra definir un tiempo, para la captura y obtencion de la
+imagen.
+n.4 funciones no descritas, usan directamente librerias del SDK para
+el manejo de la imagen.

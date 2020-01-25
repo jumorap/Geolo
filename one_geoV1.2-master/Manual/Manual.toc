@@ -1,0 +1,19 @@
+\select@language {spanish}
+\contentsline {chapter}{Introducci\'on}{5}{chapter*.2}
+\contentsline {section}{Objetivo del Manual de Operaci\'on}{5}{section*.3}
+\contentsline {section}{Alcance del Manual}{5}{section*.4}
+\contentsline {chapter}{Preparaci\'on del Microscopio}{7}{chapter*.5}
+\contentsline {section}{Software}{7}{section*.6}
+\contentsline {section}{Hardware}{8}{section*.9}
+\contentsline {section}{Calibraci\'on}{9}{section*.12}
+\contentsline {subsection}{Polarizador y Analizador}{9}{subsection*.13}
+\contentsline {subsection}{Ejes X y Y}{9}{subsection*.15}
+\contentsline {subsection}{Saturaci\'on de Luz y Foco}{10}{subsection*.16}
+\contentsline {chapter}{Preparaci\'on de la Muestra}{11}{chapter*.18}
+\contentsline {chapter}{Toma de Muestras}{13}{chapter*.22}
+\contentsline {chapter}{Procesamiento de fotograf\IeC {\'\i }as}{15}{chapter*.25}
+\contentsline {section}{Check Pending}{15}{section*.26}
+\contentsline {section}{Process Pending}{16}{section*.27}
+\contentsline {subsection}{Reupload pyramids}{16}{subsection*.28}
+\contentsline {section}{Toma de Thumbnails y Macros}{16}{section*.29}
+\contentsfinish 

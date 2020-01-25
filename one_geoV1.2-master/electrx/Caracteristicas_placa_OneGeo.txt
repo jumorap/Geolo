@@ -1,0 +1,71 @@
+En Shield RAMPS_FD v1 Rev A, que se tomo como referencia para la elaboración de la tarjeta OneGeo.
+Se realizaron ciertas modificaciones para que sea mas adaptable al proyecto objetivo.
+Presentes a continuación:
+1. La interacción de la shield con el arduino due (core ARM Sam3X), se habilito el pin AREF(conectado a PWR_FLAG-->3.3V due)
+2. Se descarto el puerto P106, presente en RAMPS_FD habilitada para la comunicación SPI.
+3. En la parte de potencia, se elimino  la etapa  Heatbed only: 12-24v,15A presente en RAMPS_FD
+4. Se modifico la etapa de etrada de alimentacion para los motores,
+en el puerto P107 se nombro una linea llamada MOT_IN, donde se agrego un fusible de 10A(F103) y un conector JPMT1 paralelo al fusible
+que habilita a un +V_MOTOR y PWR_FLAG
+5. Se conservo la etapa de  energización para mosfet de mediana potencia, POWER_IN en el puerto P108 con una linea P_IN que conecta un fusible
+de 10A en paralelo con un conector JPP1, habilita una alimentacion +V_2 y PWR_FLAG 
+6. Se elimna las etapa de regulador LM7812 presente en RAMPS
+7. Se modifica la salida de potencia llamado en Aux Power Output puerto de salida P105 V3_AUX, linea habilitada +V_3.
+8. La EXT_5V puerto P219 habilita una salida etiquetada FD_5V, pero se descarta un jump JP201 presente en RAMPS
+9. Se conserva los drivers, para el manejo de los motores paso a paso, con la unica diferencia de que se eliminan los puertos P201, P202, P203.
+se modifica  la etiqueta donde se conectaran los drivers con P204 X-MOT, P205 Y-MOT, P206 Z-MOT.
+10. Para el integrado-octal-buffer(conserva la referencia) se realiza las siguientes modificaciones:
+    .1 OEA OEB, donde estan conectados a los  triestado y  cuyas salidas estan en valor logico 1 (Descartado)
+    .2 los triestados tienen como entrada D10, D11~FET4, D12~FET5, D2~FET6, (los arreglos de resistencias conectados a las entradas, y dirijidas a tierra)(Descartado)
+    .3 las salidas de los triestados estan conectadas en paralelos con una arreglo de resistencias que van conectadas a tierra(Descartado) 
+    .4 Se dehabilita, entradas cuyos pines 13,15,17 y salidas 7,5,3.
+    .5 se direcciona una de las salidas para el control de drives E0 E1, motores polarizadores.
+11. Etapa de entradas y salidas  de Arduino Due, se retira el puerto SPI, se mantienen los I2C(TWI), los seriales. 
+se conserva la EEPROM Y EL AUX-4 los pines D29, D30 y D31 se utilizan para la luz R camera, D37 control QG1 y por ultimo
+ D47 y D49 se asigna para los sensores de efecto hall se retiran los servos.
+12.Se conserva endpots, y se elimina etapa de entrada de mosfet y termistores
+13. Se construye, una etapa de conversor DC-DC(entras v2, gn2- salidas v3,gn3 comm), driver de Q1(Mosfet, push-pull),
+driver motores  M1, M2 (polarizadores- dirver push-pull).
+driver motor DC(Ref MD0).
+sensor efecto hall
+14. AM_VIN Suministro de 12v al due por medio del regualdor, OJO!, si esta habilitado, no conectar alimentacion del due por USB 
+    O1, O2 mosfet de potencia para los motores DC, etiquetas no identificadas en el esquematico de OneGeo.
+15. Se modifico D12 y D11(DMEN).
+16. Los servos presentes en los pines de D2 a D7 en RAMPS, fueron modificados para el control PWM.
+17. Los pines AD0 a AD3 se elimina etiquetas de thermistor presnetes en RAMPS
+18. Se descartan etiquetas  E2_DIR, E2_EN y E2STEP D47, D45 y D32 respectivamente presentes en RAMPS.
+19. Los Grouds etiquetados con PWR_FLAGS en RAMPS en los pines GND4 y GND5    
+    
+    etiquetas presentes en la placa OneGeo y faltantes a referenciar en esquematico.
+    R.LIGHT (en el esquematico, hace referencia aun dirver identico a Q2 pero no se encuentra en el esquematico, en la pcb
+    esta conectada a un tipo de integrado IXD106, en la etapa del conversor DC DC)
+
+    
+    
+    
+    ------Etiquetas presentes en la placa One y presentes en el esquematico.
+    +M-(en el esquematico hace referencia a la MOT_IN P107-----> Etapa de potencia)
+    +P-(en el esquematico hace referencia a POWER_IN---->Etapa de potencia)	
+    FAN-LGH(asociado al Driver Motores M1 del integrado IXD106 M1 CONN_2--> Esquematico)
+    FAN-CAM(asociado al Driver Motores M2 del integrado IXD106 M2 CONN_2--> Esquematico)
+    L.DRV (en el esquematico, hace referencia al MSF1 conectado al drain del mosfet QG1, relacionado al driver Q1)
+    T.LIGHT (en el esquematico, hace referencia al MSF1 conectado al drain del mosfet QG1, relacionado al driver Q1)
+    POLARIZER(hace referencia al Endstops del esquematico)
+    V3AUX(P105 12V-AUX)
+    ANALIZER (referencia en el esquematico  a los condensadores de los drivers de los motores paso de E0 y E1)
+    MDO A4990(Driver motor DC)
+    DC-DC-DSUN(Connversor DC-DC)
+    QM1, QM2 (Mosfet que se encuentra asociado a los drivers de control de motores polarizadores)
+    O1,O2(Drivers push-pull)
+    P214(esquematico AUX-2)
+    QG1(control realizado por P213 AUX-4 esquematico)
+    QG2(mosfot de potencia conectado  a driver Q1 en esquematico)
+    EXT_5V(P219 esquematico)
+    PS-ON(P103 esquematico)
+    RESET(P102 esquematico)
+    SERIAL0(P216 esquematico)
+    SERIAL1(P1 esquematico)
+    I2C0(P211 esquematico)
+    I2C1(P2 esquematico)
+    NOTA: La parte del conversor presente al esquematico, se aclara en la pcb, puesto que parece ser un modulo generado con 
+    un transistor mosfet QG2 y el integrado IXD1604.

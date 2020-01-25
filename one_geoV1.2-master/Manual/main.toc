@@ -1,0 +1,5 @@
+\select@language {spanish}
+\contentsline {chapter}{Introducci\'on}{9}{chapter*.4}
+\contentsline {section}{Objetivo del Manual de Operaci\'on}{9}{section*.5}
+\contentsline {section}{Alcance del Manual}{9}{section*.6}
+\contentsfinish 
