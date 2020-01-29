@@ -1,0 +1,46 @@
+############archivo ubicado en.\code\thinsec\utils\average_images.py
+
+del script debe ser ejecutado pasando como argumentos los nombres de las imágenes a "promediar" o interpolar
+los nombres de los archivos son convertidos a formato cv2 con valores de tipo flotante
+luego hace un promedio de las imágenes cv2 y las convierte de nuevo a archivos
+*almacena la imagen restante en un archivo pasado como argumento -o --output al script
+
+############archivo ubicado en.\code\thinsec\utils\bfield_lin_remove.py
+
+Este script está escrito especialmente literal, ya que aún se sigue buscando una documentación original del archivo "cv_tools"
+
+recibe dos archivos como argumento, el primero llamado image y el  segundo bfield
+
+luego de convertir los a cv2, imprime si bfield "is_image_dark"
+si bfield "is_image_dark"
+	aplica la función "blankfield_linear_correct(image, bfield)""
+si no
+	aplica la función "blankfield_dark_correct(image, bfield)""
+reconvierte a imagen el cv2 resultante
+y lo guarda en la ruta inicial de Image + "-bfield.jpg"
+############archivo ubicado en .\code\thinsec\utils\crop_get_circle.py
+posee dos funciones
+get_inscribed_rectangle ((radius, c_x, c_y)
+	el cual retorna las coordenadas de las dos esquinas de un "cuadrad"(ya que, aunque diga rectángulo, es imposible que no salga un cuadrado) en forma de lista
+get_crop (image_shape, rectangle)
+	ajusta el rectangulo pasado a la altura y ancho de la imagen pasada, y retorna las nuevas coordenadas
+
+############archivo ubicado en .\code\thinsec\utils\plot_focus_table_common.py
+tiene dos funciones
+gen_interpolator(table, spread)
+	aplica la función Zip() a table y almacena los valores
+
+	/* la función zip se comporta como la documentacion oficial ejemplifica https://docs.python.org/3/library/functions.html#zip
+		>>> x = [1, 2, 3]
+		>>> y = [4, 5, 6]
+		>>> zipped = zip(x, y)
+		>>> list(zipped)
+		[(1, 4), (2, 5), (3, 6)]
+	*/
+	luego interpola las 3 variable generadas por zip (lo cual intuye que table tiene arrays de length 3) 
+	con funcion gaussiana y valor de épsilon igual al valor input "spread"
+	y retorna el array resultante
+get_map(table_file)
+	toma el nombre de un archivo .json
+	lo lee y toma sus atributos (table, spread) los cuales pasa a gen_interpolator
+	retorna el resultado retornado por gen_interpolator, el atributo table, el atributo spread
