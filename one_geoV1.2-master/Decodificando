@@ -1,4 +1,4 @@
-archivo ubicado en .\code\thinsec\test_zmq_filexrf.py
+###archivo ubicado en .\code\thinsec\test_zmq_filexrf.py
 el script esta diseñado para ejecutarse junto a un argumento, el nombre de un archivo
 
 mensaje = chunk
@@ -35,3 +35,23 @@ hace un loop hasta que se termina la interaccion o la excepcion KeyboardInterrup
 resumen, se crea un contexto y dos threads a los cuales se les asigna este contexto
 el thread cliente recive los chunks enviados por el servidor los almacena en /dev/shm/test.out e imprime la cantidad 
 el servidor lee los chunks de un archivo el cual fue pasado como argumento al ejecutar el script, los envia a el contexto principal que a su vez lo envia a el cliente
+
+
+###archivo ubicado en .\code\thinsec\utils\average_images.py
+
+del script debe ser ejecutado pasando como argumentos los nombres de las imagenes a "promediar" o interpolar
+los nombres de los archivos son convertidos a formato cv2 con valores de tipo flotante
+luego hace un promedio de las imagenes cv2 y las convierte de nuevo a archivos
+*almacena la imagen restante en un archivo pasado como argumento -o --output al script
+
+###archivo ubicado en .\code\thinsec\utils\bfield_lin_remove.py
+
+Este script esta escrito especialmente literal, ya que aun se sigue buscando una documentacion original de el archivo "cv_tools"
+
+recive dos archivos como argumento, el primero llamado image y el  segundo bfield
+
+luego de convertir los a cv2 ,imprime si bfield "is_image_dark"
+si bfield "is_image_dark"
+	aplica la funcion "blankfield_linear_correct(image, bfield)""
+si no
+	aplica la funcion "blankfield_dark_correct(image, bfield)""
