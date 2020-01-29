@@ -1,0 +1,20 @@
+###archivo ubicado en.\code\thinsec\utils\average_images.py
+
+del script debe ser ejecutado pasando como argumentos los nombres de las imágenes a "promediar" o interpolar
+los nombres de los archivos son convertidos a formato cv2 con valores de tipo flotante
+luego hace un promedio de las imágenes cv2 y las convierte de nuevo a archivos
+*almacena la imagen restante en un archivo pasado como argumento -o --output al script
+
+###archivo ubicado en.\code\thinsec\utils\bfield_lin_remove.py
+
+Este script está escrito especialmente literal, ya que aún se sigue buscando una documentación original del archivo "cv_tools"
+
+recibe dos archivos como argumento, el primero llamado image y el  segundo bfield
+
+luego de convertir los a cv2, imprime si bfield "is_image_dark"
+si bfield "is_image_dark"
+	aplica la función "blankfield_linear_correct(image, bfield)""
+si no
+	aplica la función "blankfield_dark_correct(image, bfield)""
+reconvierte a imagen el cv2 resultante
+y lo guarda en la ruta inicial de Image + "-bfield.jpg"
