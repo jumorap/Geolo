@@ -1,0 +1,37 @@
+archivo ubicado en .\code\thinsec\test_zmq_filexrf.py
+el script esta diseñado para ejecutarse junto a un argumento, el nombre de un archivo
+
+mensaje = chunk
+tiene una variable llamada "CHUNKED" de tipo booleana
+tiene una funcion llamada "client_thread"
+	si CHUNKED es falsa ejecuta lo siguiente
+		recibe un objeto de la clase  zmq.Context() y un ##pipe##
+		utiliza un objeto zmq.Context() para crear un server que se conecta a "tcp://127.0.0.1:6000"
+		procede a crear un bucle que escucha la llegada de mensajes y los almacena 
+		si hay un error de tipo zmq.ETERM la funcion retorna 
+		si el length de el mensaje es igual a zero se rompe el bucle
+		al finalizar, imprime todos los mensajes enviados
+	si es falsa,
+		escucha por un solo mensaje y lo imprime
+	luego de esto, envia por el objeto pipe un mensaje binario "ok"
+	y escribe en un archivo '/dev/shm/test.out' los mensajes enviados
+
+hay una segunda funcion llamada "server_thread"
+	se abre el archivo cpasado como argumento al script
+	se crea un servidor
+	se inicia un bucle en el cual 
+		se envian todos los chunks dentro de el archivo
+		a el servidor
+
+
+la ultima funcion ejecuta dos threads, a los que se les asigna a cada una su funcion cliente servidor previas
+hace un loop hasta que se termina la interaccion o la excepcion KeyboardInterrupt es activada
+
+
+
+
+
+
+resumen, se crea un contexto y dos threads a los cuales se les asigna este contexto
+el thread cliente recive los chunks enviados por el servidor los almacena en /dev/shm/test.out e imprime la cantidad 
+el servidor lee los chunks de un archivo el cual fue pasado como argumento al ejecutar el script, los envía a el contexto principal que a su vez lo envía a el cliente

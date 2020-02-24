@@ -1,0 +1,6 @@
+archivo ubicado en.\code\thinsec\utils\average_images.py
+
+del script debe ser ejecutado pasando como argumentos los nombres de las imágenes a "promediar" o interpolar
+los nombres de los archivos son convertidos a formato cv2 con valores de tipo flotante
+luego hace un promedio de las imágenes cv2 y las convierte de nuevo a archivos
+*almacena la imagen restante en un archivo pasado como argumento -o --output al script

@@ -1,0 +1,19 @@
+archivo ubicado en .\code\thinsec\utils\plot_focus_table_common.py
+tiene dos funciones
+gen_interpolator(table, spread)
+	aplica la función Zip() a table y almacena los valores
+
+	/* la función zip se comporta como la documentacion oficial ejemplifica https://docs.python.org/3/library/functions.html#zip
+		>>> x = [1, 2, 3]
+		>>> y = [4, 5, 6]
+		>>> zipped = zip(x, y)
+		>>> list(zipped)
+		[(1, 4), (2, 5), (3, 6)]
+	*/
+	luego interpola las 3 variable generadas por zip (lo cual intuye que table tiene arrays de length 3) 
+	con funcion gaussiana y valor de épsilon igual al valor input "spread"
+	y retorna el array resultante
+get_map(table_file)
+	toma el nombre de un archivo .json
+	lo lee y toma sus atributos (table, spread) los cuales pasa a gen_interpolator
+	retorna el resultado retornado por gen_interpolator, el atributo table, el atributo spread

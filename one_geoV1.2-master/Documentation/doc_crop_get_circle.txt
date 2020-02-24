@@ -1,0 +1,6 @@
+archivo ubicado en .\code\thinsec\utils\crop_get_circle.py
+posee dos funciones
+get_inscribed_rectangle ((radius, c_x, c_y)
+	el cual retorna las coordenadas de las dos esquinas de un "cuadrad"(ya que, aunque diga rectángulo, es imposible que no salga un cuadrado) en forma de lista
+get_crop (image_shape, rectangle)
+	ajusta el rectangulo pasado a la altura y ancho de la imagen pasada, y retorna las nuevas coordenadas

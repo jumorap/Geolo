@@ -1,0 +1,13 @@
+archivo ubicado en.\code\thinsec\utils\bfield_lin_remove.py
+
+Este script está escrito especialmente literal, ya que aún se sigue buscando una documentación original del archivo "cv_tools"
+
+recibe dos archivos como argumento, el primero llamado image y el  segundo bfield
+
+luego de convertir los a cv2, imprime si bfield "is_image_dark"
+si bfield "is_image_dark"
+	aplica la función "blankfield_linear_correct(image, bfield)""
+si no
+	aplica la función "blankfield_dark_correct(image, bfield)""
+reconvierte a imagen el cv2 resultante
+y lo guarda en la ruta inicial de Image + "-bfield.jpg"
